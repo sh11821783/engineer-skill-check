@@ -1,0 +1,573 @@
+  [1m[35m (8.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (14.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (13.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateDepartments (20211020103118)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (13.1ms)[0m  [1m[35mCREATE TABLE "departments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "deleted_at" datetime DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (5.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20211020103118"]]
+  [1m[36mTRANSACTION (9.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateOffices (20211020103151)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE TABLE "offices" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "deleted_at" datetime DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (6.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20211020103151"]]
+  [1m[36mTRANSACTION (8.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateEmployees (20211020103241)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (11.9ms)[0m  [1m[35mCREATE TABLE "employees" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "department_id" integer NOT NULL, "office_id" integer NOT NULL, "number" varchar NOT NULL, "last_name" varchar NOT NULL, "first_name" varchar NOT NULL, "account" varchar NOT NULL, "password" varchar NOT NULL, "email" varchar NOT NULL, "date_of_joining" date NOT NULL, "employee_info_manage_auth" boolean DEFAULT 0 NOT NULL, "deleted_at" datetime DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_employees_on_department_id" ON "employees" ("department_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_employees_on_office_id" ON "employees" ("office_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aemployees" ("id" integer NOT NULL PRIMARY KEY, "department_id" integer NOT NULL, "office_id" integer NOT NULL, "number" varchar NOT NULL, "last_name" varchar NOT NULL, "first_name" varchar NOT NULL, "account" varchar NOT NULL, "password" varchar NOT NULL, "email" varchar NOT NULL, "date_of_joining" date NOT NULL, "employee_info_manage_auth" boolean DEFAULT 0 NOT NULL, "deleted_at" datetime DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_aemployees_on_office_id" ON "aemployees" ("office_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_aemployees_on_department_id" ON "aemployees" ("department_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aemployees" ("id","department_id","office_id","number","last_name","first_name","account","password","email","date_of_joining","employee_info_manage_auth","deleted_at","created_at","updated_at")
+                     SELECT "id","department_id","office_id","number","last_name","first_name","account","password","email","date_of_joining","employee_info_manage_auth","deleted_at","created_at","updated_at" FROM "employees"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "employees"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "employees" ("id" integer NOT NULL PRIMARY KEY, "department_id" integer NOT NULL, "office_id" integer NOT NULL, "number" varchar NOT NULL, "last_name" varchar NOT NULL, "first_name" varchar NOT NULL, "account" varchar NOT NULL, "password" varchar NOT NULL, "email" varchar NOT NULL, "date_of_joining" date NOT NULL, "employee_info_manage_auth" boolean DEFAULT 0 NOT NULL, "deleted_at" datetime DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_0025f65a97"
+FOREIGN KEY ("department_id")
+  REFERENCES "departments" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_employees_on_department_id" ON "employees" ("department_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_employees_on_office_id" ON "employees" ("office_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "employees" ("id","department_id","office_id","number","last_name","first_name","account","password","email","date_of_joining","employee_info_manage_auth","deleted_at","created_at","updated_at")
+                     SELECT "id","department_id","office_id","number","last_name","first_name","account","password","email","date_of_joining","employee_info_manage_auth","deleted_at","created_at","updated_at" FROM "aemployees"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aemployees"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aemployees" ("id" integer NOT NULL PRIMARY KEY, "department_id" integer NOT NULL, "office_id" integer NOT NULL, "number" varchar NOT NULL, "last_name" varchar NOT NULL, "first_name" varchar NOT NULL, "account" varchar NOT NULL, "password" varchar NOT NULL, "email" varchar NOT NULL, "date_of_joining" date NOT NULL, "employee_info_manage_auth" boolean DEFAULT 0 NOT NULL, "deleted_at" datetime DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "tindex_aemployees_on_office_id" ON "aemployees" ("office_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_aemployees_on_department_id" ON "aemployees" ("department_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aemployees" ("id","department_id","office_id","number","last_name","first_name","account","password","email","date_of_joining","employee_info_manage_auth","deleted_at","created_at","updated_at")
+                     SELECT "id","department_id","office_id","number","last_name","first_name","account","password","email","date_of_joining","employee_info_manage_auth","deleted_at","created_at","updated_at" FROM "employees"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "employees"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "employees" ("id" integer NOT NULL PRIMARY KEY, "department_id" integer NOT NULL, "office_id" integer NOT NULL, "number" varchar NOT NULL, "last_name" varchar NOT NULL, "first_name" varchar NOT NULL, "account" varchar NOT NULL, "password" varchar NOT NULL, "email" varchar NOT NULL, "date_of_joining" date NOT NULL, "employee_info_manage_auth" boolean DEFAULT 0 NOT NULL, "deleted_at" datetime DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_0025f65a97"
+FOREIGN KEY ("department_id")
+  REFERENCES "departments" ("id")
+, CONSTRAINT "fk_rails_e87ac712d3"
+FOREIGN KEY ("office_id")
+  REFERENCES "offices" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_employees_on_department_id" ON "employees" ("department_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_employees_on_office_id" ON "employees" ("office_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "employees" ("id","department_id","office_id","number","last_name","first_name","account","password","email","date_of_joining","employee_info_manage_auth","deleted_at","created_at","updated_at")
+                     SELECT "id","department_id","office_id","number","last_name","first_name","account","password","email","date_of_joining","employee_info_manage_auth","deleted_at","created_at","updated_at" FROM "aemployees"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aemployees"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (7.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20211020103241"]]
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateProfiles (20211020112406)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE TABLE "profiles" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "employee_id" integer NOT NULL, "profile" text NOT NULL, "deleted_at" datetime DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_profiles_on_employee_id" ON "profiles" ("employee_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aprofiles" ("id" integer NOT NULL PRIMARY KEY, "employee_id" integer NOT NULL, "profile" text NOT NULL, "deleted_at" datetime DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "tindex_aprofiles_on_employee_id" ON "aprofiles" ("employee_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aprofiles" ("id","employee_id","profile","deleted_at","created_at","updated_at")
+                     SELECT "id","employee_id","profile","deleted_at","created_at","updated_at" FROM "profiles"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "profiles"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "profiles" ("id" integer NOT NULL PRIMARY KEY, "employee_id" integer NOT NULL, "profile" text NOT NULL, "deleted_at" datetime DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_3b84e63c66"
+FOREIGN KEY ("employee_id")
+  REFERENCES "employees" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_profiles_on_employee_id" ON "profiles" ("employee_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "profiles" ("id","employee_id","profile","deleted_at","created_at","updated_at")
+                     SELECT "id","employee_id","profile","deleted_at","created_at","updated_at" FROM "aprofiles"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aprofiles"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (3.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20211020112406"]]
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (7.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-10-28 13:30:39.644821"], ["updated_at", "2022-10-28 13:30:39.644821"]]
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mDepartment Load (1.9ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = ? AND "departments"."name" = ? LIMIT ?[0m  [["id", 1], ["name", "総務部"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDepartment Create (10.4ms)[0m  [1m[32mINSERT INTO "departments" ("id", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["id", 1], ["name", "総務部"], ["created_at", "2022-10-28 13:30:52.183368"], ["updated_at", "2022-10-28 13:30:52.183368"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDepartment Load (2.6ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = ? AND "departments"."name" = ? LIMIT ?[0m  [["id", 2], ["name", "技術部"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDepartment Create (9.2ms)[0m  [1m[32mINSERT INTO "departments" ("id", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["id", 2], ["name", "技術部"], ["created_at", "2022-10-28 13:30:52.226983"], ["updated_at", "2022-10-28 13:30:52.226983"]]
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDepartment Load (2.2ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = ? AND "departments"."name" = ? LIMIT ?[0m  [["id", 3], ["name", "営業部"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDepartment Create (7.9ms)[0m  [1m[32mINSERT INTO "departments" ("id", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["id", 3], ["name", "営業部"], ["created_at", "2022-10-28 13:30:52.255518"], ["updated_at", "2022-10-28 13:30:52.255518"]]
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mOffice Load (1.9ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? AND "offices"."name" = ? LIMIT ?[0m  [["id", 1], ["name", "東京"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOffice Create (10.7ms)[0m  [1m[32mINSERT INTO "offices" ("id", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["id", 1], ["name", "東京"], ["created_at", "2022-10-28 13:30:52.302451"], ["updated_at", "2022-10-28 13:30:52.302451"]]
+  [1m[36mTRANSACTION (9.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mOffice Load (2.5ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? AND "offices"."name" = ? LIMIT ?[0m  [["id", 2], ["name", "仙台"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOffice Create (10.4ms)[0m  [1m[32mINSERT INTO "offices" ("id", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["id", 2], ["name", "仙台"], ["created_at", "2022-10-28 13:30:52.334080"], ["updated_at", "2022-10-28 13:30:52.334080"]]
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mOffice Load (1.8ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? AND "offices"."name" = ? LIMIT ?[0m  [["id", 3], ["name", "大阪"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOffice Create (14.3ms)[0m  [1m[32mINSERT INTO "offices" ("id", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["id", 3], ["name", "大阪"], ["created_at", "2022-10-28 13:30:52.362668"], ["updated_at", "2022-10-28 13:30:52.362668"]]
+  [1m[36mTRANSACTION (6.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mOffice Load (3.2ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? AND "offices"."name" = ? LIMIT ?[0m  [["id", 4], ["name", "福岡"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOffice Create (7.6ms)[0m  [1m[32mINSERT INTO "offices" ("id", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["id", 4], ["name", "福岡"], ["created_at", "2022-10-28 13:30:52.394780"], ["updated_at", "2022-10-28 13:30:52.394780"]]
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mOffice Load (2.0ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? AND "offices"."name" = ? LIMIT ?[0m  [["id", 5], ["name", "大分"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOffice Create (11.0ms)[0m  [1m[32mINSERT INTO "offices" ("id", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["id", 5], ["name", "大分"], ["created_at", "2022-10-28 13:30:52.420153"], ["updated_at", "2022-10-28 13:30:52.420153"]]
+  [1m[36mTRANSACTION (5.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDepartment Load (2.9ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."name" = ? LIMIT ?[0m  [["name", "総務部"], ["LIMIT", 1]]
+  [1m[36mOffice Load (1.2ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."name" = ? LIMIT ?[0m  [["name", "東京"], ["LIMIT", 1]]
+  [1m[36mEmployee Load (2.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? AND "employees"."department_id" = ? AND "employees"."office_id" = ? AND "employees"."number" = ? AND "employees"."last_name" = ? AND "employees"."first_name" = ? AND "employees"."account" = ? AND "employees"."password" = ? AND "employees"."email" = ? AND "employees"."date_of_joining" = ? AND "employees"."employee_info_manage_auth" = ? LIMIT ?[0m  [["id", 1], ["department_id", 1], ["office_id", 1], ["number", "1"], ["last_name", "山田"], ["first_name", "太郎"], ["account", "yamada"], ["password", "hogehoge"], ["email", "yamada@example.co.jp"], ["date_of_joining", "1991-04-01"], ["employee_info_manage_auth", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOffice Load (1.2ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDepartment Load (0.2ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" = ? LIMIT ?[0m  [["number", "1"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "yamada"], ["LIMIT", 1]]
+  [1m[36mEmployee Create (11.9ms)[0m  [1m[32mINSERT INTO "employees" ("id", "department_id", "office_id", "number", "last_name", "first_name", "account", "password", "email", "date_of_joining", "employee_info_manage_auth", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 1], ["department_id", 1], ["office_id", 1], ["number", "1"], ["last_name", "山田"], ["first_name", "太郎"], ["account", "yamada"], ["password", "hogehoge"], ["email", "yamada@example.co.jp"], ["date_of_joining", "1991-04-01"], ["employee_info_manage_auth", 1], ["created_at", "2022-10-28 13:30:52.555956"], ["updated_at", "2022-10-28 13:30:52.555956"]]
+  [1m[36mTRANSACTION (6.7ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 172.18.0.1 at 2022-10-28 13:31:42 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EmployeesController#index as HTML
+  [1m[36mEmployee Load (2.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+Redirected to http://localhost:3000/login
+Filter chain halted as :user_logged_in? rendered or redirected
+Completed 302 Found in 51ms (ActiveRecord: 4.3ms | Allocations: 7337)
+
+
+Started GET "/login" for 172.18.0.1 at 2022-10-28 13:31:42 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  [1m[36mEmployee Load (2.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 103.2ms | Allocations: 5595)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /news_and_employee_introduction/public/packs
+[Webpacker] Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+
+[Webpacker] Hash: dbe93fa572433897084c
+Version: webpack 4.46.0
+Time: 8977ms
+Built at: 10/28/2022 1:31:57 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-06a533b6bf1a3fea5fc3.js    792 KiB  application  [emitted] [immutable]  application
+js/application-06a533b6bf1a3fea5fc3.js.map    841 KiB  application  [emitted] [dev]        application
+         js/header-c2f2e7e1ed03c0583649.js   4.27 KiB       header  [emitted] [immutable]  header
+     js/header-c2f2e7e1ed03c0583649.js.map   4.04 KiB       header  [emitted] [dev]        header
+                             manifest.json  668 bytes               [emitted]              
+Entrypoint application = js/application-06a533b6bf1a3fea5fc3.js js/application-06a533b6bf1a3fea5fc3.js.map
+Entrypoint header = js/header-c2f2e7e1ed03c0583649.js js/header-c2f2e7e1ed03c0583649.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 452 bytes {application} [built]
+[./app/javascript/packs/header.js] 411 bytes {header} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 110 hidden modules
+
+  [1m[36mCACHE Employee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 14553.2ms | Allocations: 30227)
+Completed 200 OK in 14606ms (Views: 14579.4ms | ActiveRecord: 2.1ms | Allocations: 33968)
+
+
+Started POST "/login" for 172.18.0.1 at 2022-10-28 13:32:01 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employees"=>{"account"=>"sample@email.com", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  [1m[36mEmployee Load (2.8ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."account" = ? AND "employees"."password" = ? LIMIT ?[0m  [["account", "sample@email.com"], ["password", "password"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:10:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 501)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mEmployee Load (1.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 51.7ms | Allocations: 4162)
+Completed 200 OK in 64ms (Views: 52.7ms | ActiveRecord: 4.0ms | Allocations: 5911)
+
+
+Started POST "/login" for 172.18.0.1 at 2022-10-28 13:35:37 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employees"=>{"account"=>"yamada@example.co.jp", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  [1m[36mEmployee Load (2.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."account" = ? AND "employees"."password" = ? LIMIT ?[0m  [["account", "yamada@example.co.jp"], ["password", "hogehoge"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:10:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 435)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mEmployee Load (1.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 43.5ms | Allocations: 3973)
+Completed 200 OK in 56ms (Views: 44.7ms | ActiveRecord: 3.4ms | Allocations: 5099)
+
+
+Started POST "/login" for 172.18.0.1 at 2022-10-28 13:35:48 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employees"=>{"account"=>"山田太郎", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  [1m[36mEmployee Load (1.7ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."account" = ? AND "employees"."password" = ? LIMIT ?[0m  [["account", "山田太郎"], ["password", "sample"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:10:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 435)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mEmployee Load (1.5ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 119.5ms | Allocations: 3983)
+Completed 200 OK in 131ms (Views: 120.9ms | ActiveRecord: 3.2ms | Allocations: 5094)
+
+
+Started POST "/login" for 172.18.0.1 at 2022-10-28 13:36:15 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employees"=>{"account"=>"yamada", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  [1m[36mEmployee Load (2.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."account" = ? AND "employees"."password" = ? LIMIT ?[0m  [["account", "yamada"], ["password", "hogehoge"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:10:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 34ms (ActiveRecord: 9.2ms | Allocations: 6841)
+
+
+Started GET "/" for 172.18.0.1 at 2022-10-28 13:36:15 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EmployeesController#index as HTML
+  [1m[36mEmployee Load (1.6ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (1.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."deleted_at" IS NULL ORDER BY number asc[0m
+  ↳ app/views/employees/index.html.erb:19
+  [1m[36mProfile Load (2.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."employee_id" = ? AND "profiles"."deleted_at" IS NULL[0m  [["employee_id", 1]]
+  ↳ app/views/employees/index.html.erb:21
+  [1m[36mDepartment Load (2.0ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/employees/index.html.erb:31
+  Rendered employees/index.html.erb within layouts/application (Duration: 116.2ms | Allocations: 15619)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 25.9ms | Allocations: 1582)
+  Rendered layout layouts/application.html.erb (Duration: 184.9ms | Allocations: 20373)
+Completed 200 OK in 198ms (Views: 173.5ms | ActiveRecord: 16.3ms | Allocations: 22290)
+
+
+Started GET "/employees" for 172.18.0.1 at 2022-10-28 13:36:53 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EmployeesController#index as HTML
+  [1m[36mEmployee Load (3.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (1.7ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."deleted_at" IS NULL ORDER BY number asc[0m
+  ↳ app/views/employees/index.html.erb:19
+  [1m[36mProfile Load (1.9ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."employee_id" = ? AND "profiles"."deleted_at" IS NULL[0m  [["employee_id", 1]]
+  ↳ app/views/employees/index.html.erb:21
+  [1m[36mDepartment Load (1.6ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/employees/index.html.erb:31
+  Rendered employees/index.html.erb within layouts/application (Duration: 23.3ms | Allocations: 2768)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 25.0ms | Allocations: 1352)
+  Rendered layout layouts/application.html.erb (Duration: 98.3ms | Allocations: 6987)
+Completed 200 OK in 110ms (Views: 95.1ms | ActiveRecord: 8.4ms | Allocations: 8205)
+
+
+Started GET "/employees/new" for 172.18.0.1 at 2022-10-28 13:37:04 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EmployeesController#new as HTML
+  [1m[36mEmployee Load (2.7ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  [1m[36mDepartment Load (1.7ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/employees/_form.html.erb:36
+  [1m[36mOffice Load (4.4ms)[0m  [1m[34mSELECT "offices".* FROM "offices"[0m
+  ↳ app/views/employees/_form.html.erb:41
+  Rendered employees/_form.html.erb (Duration: 81.5ms | Allocations: 7503)
+  Rendered employees/new.html.erb within layouts/application (Duration: 86.7ms | Allocations: 7857)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 28.7ms | Allocations: 1362)
+  Rendered layout layouts/application.html.erb (Duration: 166.2ms | Allocations: 12178)
+Completed 200 OK in 199ms (Views: 156.0ms | ActiveRecord: 15.4ms | Allocations: 16145)
+
+
+Started GET "/employees" for 172.18.0.1 at 2022-10-28 13:41:03 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EmployeesController#index as HTML
+  [1m[36mEmployee Load (1.8ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (1.9ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."deleted_at" IS NULL ORDER BY number asc[0m
+  ↳ app/views/employees/index.html.erb:19
+  [1m[36mProfile Load (1.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."employee_id" = ? AND "profiles"."deleted_at" IS NULL[0m  [["employee_id", 1]]
+  ↳ app/views/employees/index.html.erb:21
+  [1m[36mDepartment Load (2.4ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/employees/index.html.erb:31
+  Rendered employees/index.html.erb within layouts/application (Duration: 20.7ms | Allocations: 3548)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 31.3ms | Allocations: 1550)
+  Rendered layout layouts/application.html.erb (Duration: 95.1ms | Allocations: 8523)
+Completed 200 OK in 108ms (Views: 94.3ms | ActiveRecord: 7.4ms | Allocations: 10660)
+
+
+Started GET "/employees" for 172.18.0.1 at 2022-10-28 13:41:04 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EmployeesController#index as HTML
+  [1m[36mEmployee Load (1.7ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (1.9ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."deleted_at" IS NULL ORDER BY number asc[0m
+  ↳ app/views/employees/index.html.erb:19
+  [1m[36mProfile Load (1.5ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."employee_id" = ? AND "profiles"."deleted_at" IS NULL[0m  [["employee_id", 1]]
+  ↳ app/views/employees/index.html.erb:21
+  [1m[36mDepartment Load (1.4ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/employees/index.html.erb:31
+  Rendered employees/index.html.erb within layouts/application (Duration: 19.0ms | Allocations: 2739)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 23.2ms | Allocations: 1352)
+  Rendered layout layouts/application.html.erb (Duration: 90.9ms | Allocations: 6962)
+Completed 200 OK in 103ms (Views: 89.2ms | ActiveRecord: 6.5ms | Allocations: 8165)
+
+
+Started GET "/employees/new" for 172.18.0.1 at 2022-10-28 13:41:10 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EmployeesController#new as HTML
+  [1m[36mEmployee Load (1.6ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  [1m[36mDepartment Load (1.6ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/employees/_form.html.erb:36
+  [1m[36mOffice Load (1.2ms)[0m  [1m[34mSELECT "offices".* FROM "offices"[0m
+  ↳ app/views/employees/_form.html.erb:41
+  Rendered employees/_form.html.erb (Duration: 17.5ms | Allocations: 3867)
+  Rendered employees/new.html.erb within layouts/application (Duration: 21.5ms | Allocations: 4176)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 18.6ms | Allocations: 1356)
+  Rendered layout layouts/application.html.erb (Duration: 77.7ms | Allocations: 8380)
+Completed 200 OK in 88ms (Views: 77.3ms | ActiveRecord: 4.4ms | Allocations: 9577)
+
+
+Started GET "/employees/new" for 172.18.0.1 at 2022-10-28 13:52:21 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EmployeesController#new as HTML
+  [1m[36mEmployee Load (1.7ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  [1m[36mDepartment Load (1.7ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/employees/_form.html.erb:41
+  [1m[36mOffice Load (1.9ms)[0m  [1m[34mSELECT "offices".* FROM "offices"[0m
+  ↳ app/views/employees/_form.html.erb:46
+  Rendered employees/_form.html.erb (Duration: 24.8ms | Allocations: 8447)
+  Rendered employees/new.html.erb within layouts/application (Duration: 27.6ms | Allocations: 8788)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 21.8ms | Allocations: 1561)
+  Rendered layout layouts/application.html.erb (Duration: 99.5ms | Allocations: 13735)
+Completed 200 OK in 139ms (Views: 100.8ms | ActiveRecord: 5.2ms | Allocations: 25450)
+
+
+Started GET "/employees/new" for 172.18.0.1 at 2022-10-28 13:53:20 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EmployeesController#new as HTML
+  [1m[36mEmployee Load (1.8ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  [1m[36mDepartment Load (2.8ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/employees/_form.html.erb:46
+  [1m[36mOffice Load (1.4ms)[0m  [1m[34mSELECT "offices".* FROM "offices"[0m
+  ↳ app/views/employees/_form.html.erb:51
+  Rendered employees/_form.html.erb (Duration: 19.5ms | Allocations: 4500)
+  Rendered employees/new.html.erb within layouts/application (Duration: 22.8ms | Allocations: 4835)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 26.0ms | Allocations: 1559)
+  Rendered layout layouts/application.html.erb (Duration: 95.2ms | Allocations: 9794)
+Completed 200 OK in 108ms (Views: 95.4ms | ActiveRecord: 6.0ms | Allocations: 11724)
+
+
+Started GET "/employees/new" for 172.18.0.1 at 2022-10-28 13:53:38 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EmployeesController#new as HTML
+  [1m[36mEmployee Load (4.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  [1m[36mDepartment Load (2.1ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/employees/_form.html.erb:46
+  [1m[36mOffice Load (1.6ms)[0m  [1m[34mSELECT "offices".* FROM "offices"[0m
+  ↳ app/views/employees/_form.html.erb:51
+  Rendered employees/_form.html.erb (Duration: 29.2ms | Allocations: 4466)
+  Rendered employees/new.html.erb within layouts/application (Duration: 32.9ms | Allocations: 4801)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 21.4ms | Allocations: 1559)
+  Rendered layout layouts/application.html.erb (Duration: 102.3ms | Allocations: 9770)
+Completed 200 OK in 117ms (Views: 102.3ms | ActiveRecord: 8.0ms | Allocations: 11703)
+
+
+Started GET "/employees" for 172.18.0.1 at 2022-10-28 13:55:04 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EmployeesController#index as HTML
+  [1m[36mEmployee Load (2.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (2.8ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."deleted_at" IS NULL ORDER BY number asc[0m
+  ↳ app/views/employees/index.html.erb:19
+  [1m[36mProfile Load (2.0ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."employee_id" = ? AND "profiles"."deleted_at" IS NULL[0m  [["employee_id", 1]]
+  ↳ app/views/employees/index.html.erb:21
+  [1m[36mDepartment Load (1.7ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/employees/index.html.erb:31
+  Rendered employees/index.html.erb within layouts/application (Duration: 32.1ms | Allocations: 8121)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 21.0ms | Allocations: 1353)
+  Rendered layout layouts/application.html.erb (Duration: 90.4ms | Allocations: 12400)
+Completed 200 OK in 102ms (Views: 85.9ms | ActiveRecord: 8.4ms | Allocations: 13797)
+
+
+Started GET "/employees/new" for 172.18.0.1 at 2022-10-28 13:55:14 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EmployeesController#new as HTML
+  [1m[36mEmployee Load (1.5ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  [1m[36mDepartment Load (1.8ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/employees/_form.html.erb:46
+  [1m[36mOffice Load (1.6ms)[0m  [1m[34mSELECT "offices".* FROM "offices"[0m
+  ↳ app/views/employees/_form.html.erb:51
+  Rendered employees/_form.html.erb (Duration: 16.3ms | Allocations: 3719)
+  Rendered employees/new.html.erb within layouts/application (Duration: 17.4ms | Allocations: 3812)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 21.2ms | Allocations: 1353)
+  Rendered layout layouts/application.html.erb (Duration: 80.4ms | Allocations: 8014)
+Completed 200 OK in 88ms (Views: 79.5ms | ActiveRecord: 4.9ms | Allocations: 9157)
+
+
+Started POST "/employees" for 172.18.0.1 at 2022-10-28 13:57:16 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EmployeesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"number"=>"", "last_name"=>"", "first_name"=>"", "date_of_joining"=>"", "email"=>"sample@email.com", "account"=>"", "password"=>"[FILTERED]", "department_id"=>"1", "office_id"=>"1", "employee_info_manage_auth"=>"0"}, "commit"=>"保存"}
+  [1m[36mEmployee Load (2.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/employees_controller.rb:18:in `create'
+  [1m[36mOffice Load (1.6ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:18:in `create'
+  [1m[36mDepartment Load (0.1ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:18:in `create'
+  [1m[36mEmployee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" = ? LIMIT ?[0m  [["number", ""], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:18:in `create'
+  [1m[36mEmployee Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", ""], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/employees_controller.rb:18:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  [1m[36mDepartment Load (1.9ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/employees/_form.html.erb:46
+  [1m[36mOffice Load (2.2ms)[0m  [1m[34mSELECT "offices".* FROM "offices"[0m
+  ↳ app/views/employees/_form.html.erb:51
+  Rendered employees/_form.html.erb (Duration: 28.8ms | Allocations: 6362)
+  Rendered employees/new.html.erb within layouts/application (Duration: 31.5ms | Allocations: 6455)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 23.0ms | Allocations: 1347)
+  Rendered layout layouts/application.html.erb (Duration: 108.7ms | Allocations: 10589)
+Completed 200 OK in 157ms (Views: 107.1ms | ActiveRecord: 8.6ms | Allocations: 18511)
+
+
+Started GET "/employees/new" for 172.18.0.1 at 2022-10-28 13:57:31 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EmployeesController#new as HTML
+  [1m[36mEmployee Load (1.6ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  [1m[36mDepartment Load (3.1ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/employees/_form.html.erb:46
+  [1m[36mOffice Load (1.9ms)[0m  [1m[34mSELECT "offices".* FROM "offices"[0m
+  ↳ app/views/employees/_form.html.erb:51
+  Rendered employees/_form.html.erb (Duration: 23.2ms | Allocations: 3622)
+  Rendered employees/new.html.erb within layouts/application (Duration: 24.6ms | Allocations: 3715)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 23.8ms | Allocations: 1353)
+  Rendered layout layouts/application.html.erb (Duration: 89.7ms | Allocations: 7921)
+Completed 200 OK in 98ms (Views: 87.1ms | ActiveRecord: 6.6ms | Allocations: 8985)
+
+
+Started GET "/employees" for 172.18.0.1 at 2022-10-28 13:57:46 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EmployeesController#index as HTML
+  [1m[36mEmployee Load (1.6ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (1.8ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."deleted_at" IS NULL ORDER BY number asc[0m
+  ↳ app/views/employees/index.html.erb:19
+  [1m[36mProfile Load (2.7ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."employee_id" = ? AND "profiles"."deleted_at" IS NULL[0m  [["employee_id", 1]]
+  ↳ app/views/employees/index.html.erb:21
+  [1m[36mDepartment Load (4.5ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/employees/index.html.erb:31
+  Rendered employees/index.html.erb within layouts/application (Duration: 29.5ms | Allocations: 2757)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 23.0ms | Allocations: 1352)
+  Rendered layout layouts/application.html.erb (Duration: 99.4ms | Allocations: 6980)
+Completed 200 OK in 108ms (Views: 92.9ms | ActiveRecord: 10.6ms | Allocations: 8125)
+
+
+Started GET "/employees/new" for 172.18.0.1 at 2022-10-28 13:57:55 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EmployeesController#new as HTML
+  [1m[36mEmployee Load (1.8ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  [1m[36mDepartment Load (2.0ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/employees/_form.html.erb:46
+  [1m[36mOffice Load (2.0ms)[0m  [1m[34mSELECT "offices".* FROM "offices"[0m
+  ↳ app/views/employees/_form.html.erb:51
+  Rendered employees/_form.html.erb (Duration: 25.3ms | Allocations: 3631)
+  Rendered employees/new.html.erb within layouts/application (Duration: 27.3ms | Allocations: 3724)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 22.1ms | Allocations: 1353)
+  Rendered layout layouts/application.html.erb (Duration: 98.2ms | Allocations: 7925)
+Completed 200 OK in 107ms (Views: 96.5ms | ActiveRecord: 5.9ms | Allocations: 8989)
+
+
