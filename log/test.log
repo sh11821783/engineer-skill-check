@@ -129,3 +129,483 @@ FOREIGN KEY ("employee_id")
   [1m[36mTRANSACTION (5.0ms)[0m  [1m[36mcommit transaction[0m
   [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "jnomsxcnjn"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (3.5ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "sz5vtqugbf"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "3airx2q3ls"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists? (1.8ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "45po1060m9"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "de4toallnj"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "34p2xywywd"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists? (2.3ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "go8ighaw51"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "optpvgx6b1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "tac39fr7vv"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "qwfsh2x49l"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "xj2ckh8b8u"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "tznocvpju5"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "rkofk14pvw"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "vv2ab1em73"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "n2yi9t9r5i"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "xfn6ufe349"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "meqvhmf8hz"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "ckxsgb0zd9"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "fcmqt7fnvk"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "kc70pa3v1c"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists? (2.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "8r9d6xm0tt"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists? (2.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "xwn6gsaf3v"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists? (1.9ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "28wwcx85jw"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists? (2.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "zlaacrbthj"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists? (1.8ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "6jpc5enu14"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "w37av3m1h5"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "rm6qcgrdut"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "izpl8u7pu8"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "44trf6d27h"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "3fmezzj6x6"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists? (1.8ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "hcw52fx1on"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "sgiyvml3l1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "mrtjj5n41u"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "yki49axlfd"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "c7t79wzqey"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "32rnwd9hm2"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "797g99i93y"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (3.0ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "hnaz2sy3bd"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists? (3.2ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "j05gkv0d30"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists? (3.4ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "ubx43ozhgp"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists? (1.8ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "t5eaae6ixg"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "7bt5pbj1bj"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists? (1.9ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "0xvejbyw93"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (2.9ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "g2ewec7zv4"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "om2rq7h9ej"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "j5z1mdhlr8"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "jjx5nk5vb1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "ccyak2vtvs"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists? (2.8ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "4hcy1g0k6e"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "20nlrwouf7"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "2xnodxglmy"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists? (2.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "5xrbcjmab6"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "2gstsvj5zs"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "g7yudz0i7k"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "7qr00uj17a"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (2.7ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "bkldrlu4g7"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists? (3.2ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "c6dqm4v1iu"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists? (3.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "1d3zb802ig"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists? (3.0ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "i1i84vajlh"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists? (2.6ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "8ellc9u3g3"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists? (3.2ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "84ohctm8qk"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (3.4ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "b42ddzofnd"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "y6kiyh9ts0"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m

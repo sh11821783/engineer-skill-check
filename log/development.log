@@ -11721,3 +11721,575 @@ Processing by EmployeesController#index as HTML
 Completed 200 OK in 650ms (Views: 439.1ms | ActiveRecord: 35.2ms | Allocations: 45736)
 
 
+Started GET "/employees" for 172.22.0.1 at 2022-10-30 18:47:47 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EmployeesController#index as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  [1m[36mEmployee Load (2.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" WHERE "employees"."deleted_at" IS NULL[0m
+  ↳ app/views/employees/index.html.erb:2
+  [1m[36mEmployee Load (1.6ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."deleted_at" IS NULL ORDER BY number asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/employees/index.html.erb:23
+  [1m[36mProfile Load (2.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."employee_id" = ? AND "profiles"."deleted_at" IS NULL[0m  [["employee_id", 1]]
+  ↳ app/views/employees/index.html.erb:25
+  [1m[36mDepartment Load (2.7ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/employees/index.html.erb:35
+  [1m[36mProfile Load (2.8ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."employee_id" = ? AND "profiles"."deleted_at" IS NULL[0m  [["employee_id", 2]]
+  ↳ app/views/employees/index.html.erb:25
+  [1m[36mCACHE Department Load (0.0ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/employees/index.html.erb:35
+  Rendered employees/index.html.erb within layouts/application (Duration: 51.4ms | Allocations: 7069)
+  Rendered layouts/_header.html.erb (Duration: 5.8ms | Allocations: 703)
+  Rendered layout layouts/application.html.erb (Duration: 108.7ms | Allocations: 10837)
+Completed 200 OK in 162ms (Views: 106.3ms | ActiveRecord: 17.4ms | Allocations: 16350)
+
+
+Started GET "/employees/new" for 172.22.0.1 at 2022-10-30 18:47:50 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EmployeesController#new as HTML
+  [1m[36mEmployee Load (2.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  [1m[36mDepartment Load (1.7ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/employees/_form.html.erb:46
+  [1m[36mOffice Load (2.5ms)[0m  [1m[34mSELECT "offices".* FROM "offices"[0m
+  ↳ app/views/employees/_form.html.erb:51
+  Rendered employees/_form.html.erb (Duration: 233.5ms | Allocations: 14138)
+  Rendered employees/new.html.erb within layouts/application (Duration: 237.3ms | Allocations: 14485)
+  Rendered layouts/_header.html.erb (Duration: 2.9ms | Allocations: 518)
+  Rendered layout layouts/application.html.erb (Duration: 260.9ms | Allocations: 17592)
+Completed 200 OK in 308ms (Views: 252.9ms | ActiveRecord: 12.5ms | Allocations: 22068)
+
+
+Started GET "/employees" for 172.22.0.1 at 2022-10-30 18:47:56 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EmployeesController#index as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mEmployee Load (2.7ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" WHERE "employees"."deleted_at" IS NULL[0m
+  ↳ app/views/employees/index.html.erb:2
+  [1m[36mEmployee Load (3.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."deleted_at" IS NULL ORDER BY number asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/employees/index.html.erb:23
+  [1m[36mProfile Load (1.5ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."employee_id" = ? AND "profiles"."deleted_at" IS NULL[0m  [["employee_id", 1]]
+  ↳ app/views/employees/index.html.erb:25
+  [1m[36mDepartment Load (2.1ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/employees/index.html.erb:35
+  [1m[36mProfile Load (1.6ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."employee_id" = ? AND "profiles"."deleted_at" IS NULL[0m  [["employee_id", 2]]
+  ↳ app/views/employees/index.html.erb:25
+  [1m[36mCACHE Department Load (0.0ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/employees/index.html.erb:35
+  Rendered employees/index.html.erb within layouts/application (Duration: 47.8ms | Allocations: 5827)
+  Rendered layouts/_header.html.erb (Duration: 3.9ms | Allocations: 504)
+  Rendered layout layouts/application.html.erb (Duration: 70.8ms | Allocations: 8749)
+Completed 200 OK in 85ms (Views: 63.6ms | ActiveRecord: 13.0ms | Allocations: 10206)
+
+
+Started GET "/employees/new" for 172.22.0.1 at 2022-10-30 18:48:01 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EmployeesController#new as HTML
+  [1m[36mEmployee Load (2.6ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  [1m[36mDepartment Load (1.5ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/employees/_form.html.erb:46
+  [1m[36mOffice Load (3.8ms)[0m  [1m[34mSELECT "offices".* FROM "offices"[0m
+  ↳ app/views/employees/_form.html.erb:51
+  Rendered employees/_form.html.erb (Duration: 20.9ms | Allocations: 4618)
+  Rendered employees/new.html.erb within layouts/application (Duration: 22.3ms | Allocations: 4712)
+  Rendered layouts/_header.html.erb (Duration: 2.9ms | Allocations: 505)
+  Rendered layout layouts/application.html.erb (Duration: 44.3ms | Allocations: 7631)
+Completed 200 OK in 58ms (Views: 42.7ms | ActiveRecord: 7.9ms | Allocations: 8702)
+
+
+Started POST "/employees" for 172.22.0.1 at 2022-10-30 18:48:29 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EmployeesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"number"=>"2", "last_name"=>"山田", "first_name"=>"太郎", "email"=>"yamada", "date_of_joining"=>"1988.1.1", "account"=>"yamada", "password"=>"[FILTERED]", "department_id"=>"1", "office_id"=>"1", "employee_info_manage_auth"=>"0", "new_posting_auth"=>"0"}, "commit"=>"保存"}
+  [1m[36mEmployee Load (2.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+[31mUnpermitted parameter: :new_posting_auth[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/employees_controller.rb:18:in `create'
+  [1m[36mOffice Load (2.6ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:18:in `create'
+  [1m[36mDepartment Load (0.7ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:18:in `create'
+  [1m[36mEmployee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" = ? LIMIT ?[0m  [["number", "2"], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:18:in `create'
+  [1m[36mEmployee Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "yamada"], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/employees_controller.rb:18:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  [1m[36mDepartment Load (2.5ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/employees/_form.html.erb:46
+  [1m[36mOffice Load (1.7ms)[0m  [1m[34mSELECT "offices".* FROM "offices"[0m
+  ↳ app/views/employees/_form.html.erb:51
+  Rendered employees/_form.html.erb (Duration: 21.4ms | Allocations: 5449)
+  Rendered employees/new.html.erb within layouts/application (Duration: 22.7ms | Allocations: 5543)
+  Rendered layouts/_header.html.erb (Duration: 3.1ms | Allocations: 505)
+  Rendered layout layouts/application.html.erb (Duration: 43.8ms | Allocations: 8462)
+Completed 200 OK in 113ms (Views: 42.1ms | ActiveRecord: 10.6ms | Allocations: 16522)
+
+
+Started POST "/employees" for 172.22.0.1 at 2022-10-30 18:53:07 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EmployeesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"number"=>"2", "last_name"=>"山田", "first_name"=>"太郎", "email"=>"yamada@example.co.jp", "date_of_joining"=>"1988.1.1", "account"=>"yamada", "password"=>"[FILTERED]", "department_id"=>"1", "office_id"=>"1", "employee_info_manage_auth"=>"0", "new_posting_auth"=>"0"}, "commit"=>"保存"}
+  [1m[36mEmployee Load (3.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+[31mUnpermitted parameter: :new_posting_auth[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/employees_controller.rb:18:in `create'
+  [1m[36mOffice Load (2.8ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:18:in `create'
+  [1m[36mDepartment Load (0.1ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:18:in `create'
+  [1m[36mEmployee Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" = ? LIMIT ?[0m  [["number", "2"], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:18:in `create'
+  [1m[36mEmployee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "yamada"], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/employees_controller.rb:18:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  [1m[36mDepartment Load (2.9ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/employees/_form.html.erb:46
+  [1m[36mOffice Load (2.4ms)[0m  [1m[34mSELECT "offices".* FROM "offices"[0m
+  ↳ app/views/employees/_form.html.erb:51
+  Rendered employees/_form.html.erb (Duration: 29.2ms | Allocations: 5351)
+  Rendered employees/new.html.erb within layouts/application (Duration: 30.8ms | Allocations: 5445)
+  Rendered layouts/_header.html.erb (Duration: 5.5ms | Allocations: 505)
+  Rendered layout layouts/application.html.erb (Duration: 60.8ms | Allocations: 8384)
+Completed 200 OK in 123ms (Views: 61.4ms | ActiveRecord: 12.3ms | Allocations: 14977)
+
+
+Started POST "/employees" for 172.22.0.1 at 2022-10-30 18:53:18 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EmployeesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"number"=>"2", "last_name"=>"山田", "first_name"=>"太郎", "email"=>"yamada@example.co.jp", "date_of_joining"=>"1988.1.1", "account"=>"yamada", "password"=>"[FILTERED]", "department_id"=>"1", "office_id"=>"1", "employee_info_manage_auth"=>"0", "new_posting_auth"=>"0"}, "commit"=>"保存"}
+  [1m[36mEmployee Load (2.7ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+[31mUnpermitted parameter: :new_posting_auth[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/employees_controller.rb:18:in `create'
+  [1m[36mOffice Load (1.6ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:18:in `create'
+  [1m[36mDepartment Load (0.1ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:18:in `create'
+  [1m[36mEmployee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" = ? LIMIT ?[0m  [["number", "2"], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:18:in `create'
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", "yamada"], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/employees_controller.rb:18:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  [1m[36mDepartment Load (2.2ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/employees/_form.html.erb:46
+  [1m[36mOffice Load (1.6ms)[0m  [1m[34mSELECT "offices".* FROM "offices"[0m
+  ↳ app/views/employees/_form.html.erb:51
+  Rendered employees/_form.html.erb (Duration: 20.3ms | Allocations: 5365)
+  Rendered employees/new.html.erb within layouts/application (Duration: 22.0ms | Allocations: 5459)
+  Rendered layouts/_header.html.erb (Duration: 4.9ms | Allocations: 505)
+  Rendered layout layouts/application.html.erb (Duration: 43.7ms | Allocations: 8398)
+Completed 200 OK in 81ms (Views: 42.6ms | ActiveRecord: 8.8ms | Allocations: 14998)
+
+
+Started GET "/employees" for 172.22.0.1 at 2022-10-30 18:53:24 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EmployeesController#index as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mEmployee Load (2.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" WHERE "employees"."deleted_at" IS NULL[0m
+  ↳ app/views/employees/index.html.erb:2
+  [1m[36mEmployee Load (1.9ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."deleted_at" IS NULL ORDER BY number asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/employees/index.html.erb:23
+  [1m[36mProfile Load (2.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."employee_id" = ? AND "profiles"."deleted_at" IS NULL[0m  [["employee_id", 1]]
+  ↳ app/views/employees/index.html.erb:25
+  [1m[36mDepartment Load (2.0ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/employees/index.html.erb:35
+  [1m[36mProfile Load (2.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."employee_id" = ? AND "profiles"."deleted_at" IS NULL[0m  [["employee_id", 2]]
+  ↳ app/views/employees/index.html.erb:25
+  [1m[36mCACHE Department Load (0.0ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/employees/index.html.erb:35
+  Rendered employees/index.html.erb within layouts/application (Duration: 49.0ms | Allocations: 5703)
+  Rendered layouts/_header.html.erb (Duration: 3.0ms | Allocations: 504)
+  Rendered layout layouts/application.html.erb (Duration: 71.4ms | Allocations: 8622)
+Completed 200 OK in 82ms (Views: 63.5ms | ActiveRecord: 13.0ms | Allocations: 9876)
+
+
+Started GET "/employees/new" for 172.22.0.1 at 2022-10-30 18:53:26 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EmployeesController#new as HTML
+  [1m[36mEmployee Load (2.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  [1m[36mDepartment Load (3.5ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/employees/_form.html.erb:46
+  [1m[36mOffice Load (2.5ms)[0m  [1m[34mSELECT "offices".* FROM "offices"[0m
+  ↳ app/views/employees/_form.html.erb:51
+  Rendered employees/_form.html.erb (Duration: 28.8ms | Allocations: 4586)
+  Rendered employees/new.html.erb within layouts/application (Duration: 29.9ms | Allocations: 4680)
+  Rendered layouts/_header.html.erb (Duration: 3.4ms | Allocations: 505)
+  Rendered layout layouts/application.html.erb (Duration: 64.5ms | Allocations: 7599)
+Completed 200 OK in 73ms (Views: 60.5ms | ActiveRecord: 8.1ms | Allocations: 8664)
+
+
+Started POST "/employees" for 172.22.0.1 at 2022-10-30 18:53:34 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EmployeesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"number"=>"", "last_name"=>"", "first_name"=>"", "email"=>"yamada@example.co.jp", "date_of_joining"=>"", "account"=>"", "password"=>"[FILTERED]", "department_id"=>"1", "office_id"=>"1", "employee_info_manage_auth"=>"0", "new_posting_auth"=>"0"}, "commit"=>"保存"}
+  [1m[36mEmployee Load (5.7ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+[31mUnpermitted parameter: :new_posting_auth[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/employees_controller.rb:18:in `create'
+  [1m[36mOffice Load (3.5ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:18:in `create'
+  [1m[36mDepartment Load (0.2ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:18:in `create'
+  [1m[36mEmployee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" = ? LIMIT ?[0m  [["number", ""], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:18:in `create'
+  [1m[36mEmployee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", ""], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/employees_controller.rb:18:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  [1m[36mDepartment Load (2.6ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/employees/_form.html.erb:46
+  [1m[36mOffice Load (2.0ms)[0m  [1m[34mSELECT "offices".* FROM "offices"[0m
+  ↳ app/views/employees/_form.html.erb:51
+  Rendered employees/_form.html.erb (Duration: 37.1ms | Allocations: 7537)
+  Rendered employees/new.html.erb within layouts/application (Duration: 38.7ms | Allocations: 7631)
+  Rendered layouts/_header.html.erb (Duration: 5.4ms | Allocations: 505)
+  Rendered layout layouts/application.html.erb (Duration: 70.5ms | Allocations: 10552)
+Completed 200 OK in 134ms (Views: 68.6ms | ActiveRecord: 14.6ms | Allocations: 17196)
+
+
+Started POST "/employees" for 172.22.0.1 at 2022-10-30 18:53:58 +0000
+Cannot render console from 172.22.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EmployeesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"number"=>"1", "last_name"=>"", "first_name"=>"", "email"=>"yamada@example.co.jp", "date_of_joining"=>"2022-10-30", "account"=>"", "password"=>"[FILTERED]", "department_id"=>"1", "office_id"=>"1", "employee_info_manage_auth"=>"0", "new_posting_auth"=>"0"}, "commit"=>"保存"}
+  [1m[36mEmployee Load (2.6ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+[31mUnpermitted parameter: :new_posting_auth[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/employees_controller.rb:18:in `create'
+  [1m[36mOffice Load (1.8ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:18:in `create'
+  [1m[36mDepartment Load (0.2ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:18:in `create'
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" = ? LIMIT ?[0m  [["number", "1"], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:18:in `create'
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", ""], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/employees_controller.rb:18:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  [1m[36mDepartment Load (1.5ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/employees/_form.html.erb:46
+  [1m[36mOffice Load (2.5ms)[0m  [1m[34mSELECT "offices".* FROM "offices"[0m
+  ↳ app/views/employees/_form.html.erb:51
+  Rendered employees/_form.html.erb (Duration: 27.4ms | Allocations: 7484)
+  Rendered employees/new.html.erb within layouts/application (Duration: 28.6ms | Allocations: 7578)
+  Rendered layouts/_header.html.erb (Duration: 2.6ms | Allocations: 505)
+  Rendered layout layouts/application.html.erb (Duration: 45.6ms | Allocations: 10517)
+Completed 200 OK in 90ms (Views: 44.2ms | ActiveRecord: 9.0ms | Allocations: 17130)
+
+
+Started POST "/employees" for 172.23.0.1 at 2022-10-30 19:46:16 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (12.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EmployeesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"number"=>"1", "last_name"=>"", "first_name"=>"", "email"=>"yamada@example.co.jp", "date_of_joining"=>"2022-10-30", "account"=>"", "password"=>"[FILTERED]", "department_id"=>"1", "office_id"=>"1", "employee_info_manage_auth"=>"0", "new_posting_auth"=>"0"}, "commit"=>"保存"}
+  [1m[36mEmployee Load (2.8ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+[31mUnpermitted parameter: :new_posting_auth[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/employees_controller.rb:18:in `create'
+  [1m[36mOffice Load (1.4ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:18:in `create'
+  [1m[36mDepartment Load (1.8ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:18:in `create'
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" = ? LIMIT ?[0m  [["number", "1"], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:18:in `create'
+  [1m[36mEmployee Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", ""], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/employees_controller.rb:18:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  [1m[36mDepartment Load (1.9ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/employees/_form.html.erb:46
+  [1m[36mOffice Load (2.0ms)[0m  [1m[34mSELECT "offices".* FROM "offices"[0m
+  ↳ app/views/employees/_form.html.erb:51
+  Rendered employees/_form.html.erb (Duration: 5927.4ms | Allocations: 1351756)
+  Rendered employees/new.html.erb within layouts/application (Duration: 5943.8ms | Allocations: 1352486)
+  Rendered layouts/_header.html.erb (Duration: 5.0ms | Allocations: 757)
+  Rendered layout layouts/application.html.erb (Duration: 6083.6ms | Allocations: 1360281)
+Completed 200 OK in 6468ms (Views: 6169.6ms | ActiveRecord: 20.7ms | Allocations: 1395647)
+
+
+Started POST "/employees" for 172.23.0.1 at 2022-10-30 20:09:53 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EmployeesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"number"=>"1", "last_name"=>"", "first_name"=>"", "email"=>"yamada@example.co.jp", "date_of_joining"=>"2022-10-30", "account"=>"", "password"=>"[FILTERED]", "department_id"=>"1", "office_id"=>"1", "employee_info_manage_auth"=>"0", "new_posting_auth"=>"0"}, "commit"=>"保存"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  [1m[36mEmployee Load (1.8ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+[31mUnpermitted parameter: :new_posting_auth[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/employees_controller.rb:18:in `create'
+  [1m[36mOffice Load (2.6ms)[0m  [1m[34mSELECT "offices".* FROM "offices" WHERE "offices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:18:in `create'
+  [1m[36mDepartment Load (0.2ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:18:in `create'
+  [1m[36mEmployee Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."number" = ? LIMIT ?[0m  [["number", "1"], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:18:in `create'
+  [1m[36mEmployee Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "employees" WHERE "employees"."account" = ? LIMIT ?[0m  [["account", ""], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/employees_controller.rb:18:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  [1m[36mDepartment Load (1.5ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/employees/_form.html.erb:46
+  [1m[36mOffice Load (1.7ms)[0m  [1m[34mSELECT "offices".* FROM "offices"[0m
+  ↳ app/views/employees/_form.html.erb:51
+  Rendered employees/_form.html.erb (Duration: 32.2ms | Allocations: 8573)
+  Rendered employees/new.html.erb within layouts/application (Duration: 37.9ms | Allocations: 8913)
+  Rendered layouts/_header.html.erb (Duration: 5.6ms | Allocations: 721)
+  Rendered layout layouts/application.html.erb (Duration: 63.8ms | Allocations: 12681)
+Completed 200 OK in 191ms (Views: 68.3ms | ActiveRecord: 11.0ms | Allocations: 37687)
+
+
+Started GET "/employees/1/articles" for 172.23.0.1 at 2022-10-30 20:09:57 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ArticlesController#index as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee_id"=>"1"}
+  [1m[36mEmployee Load (1.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  [1m[36mArticle Load (2.9ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/articles/index.html.erb:19
+  [1m[36mCACHE Employee Load (0.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:26
+  [1m[36mEmployee Load (1.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:26
+  [1m[36mCACHE Employee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:26
+  [1m[36mCACHE Employee Load (0.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:26
+  [1m[36mCACHE Employee Load (0.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:26
+  Rendered articles/index.html.erb within layouts/application (Duration: 100.0ms | Allocations: 16511)
+  Rendered layouts/_header.html.erb (Duration: 3.8ms | Allocations: 514)
+  Rendered layout layouts/application.html.erb (Duration: 121.1ms | Allocations: 19669)
+Completed 200 OK in 137ms (Views: 111.6ms | ActiveRecord: 14.4ms | Allocations: 22547)
+
+
+Started GET "/employees/1/articles/new" for 172.23.0.1 at 2022-10-30 20:10:03 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ArticlesController#new as HTML
+  Parameters: {"employee_id"=>"1"}
+  [1m[36mEmployee Load (1.6ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered layouts/_error_messages.html.erb (Duration: 2.6ms | Allocations: 213)
+  Rendered articles/new.html.erb within layouts/application (Duration: 22.3ms | Allocations: 1904)
+  Rendered layouts/_header.html.erb (Duration: 3.0ms | Allocations: 510)
+  Rendered layout layouts/application.html.erb (Duration: 44.3ms | Allocations: 4989)
+Completed 200 OK in 56ms (Views: 47.2ms | ActiveRecord: 1.6ms | Allocations: 6250)
+
+
+Started POST "/employees/1/articles" for 172.23.0.1 at 2022-10-30 20:10:08 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ArticlesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"登録する", "article"=>{"title"=>"", "content"=>""}, "employee_id"=>"1"}
+  [1m[36mEmployee Load (5.6ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered layouts/_error_messages.html.erb (Duration: 2.4ms | Allocations: 761)
+  Rendered articles/new.html.erb within layouts/application (Duration: 9.1ms | Allocations: 2260)
+  Rendered layouts/_header.html.erb (Duration: 2.7ms | Allocations: 506)
+  Rendered layout layouts/application.html.erb (Duration: 27.4ms | Allocations: 5318)
+Completed 200 OK in 92ms (Views: 30.0ms | ActiveRecord: 5.6ms | Allocations: 10151)
+
+
+Started POST "/employees/1/articles" for 172.23.0.1 at 2022-10-30 20:11:07 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ArticlesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"登録する", "article"=>{"title"=>"", "content"=>""}, "employee_id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  [1m[36mEmployee Load (2.5ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered layouts/_error_messages.html.erb (Duration: 2.4ms | Allocations: 715)
+  Rendered articles/new.html.erb within layouts/application (Duration: 10.3ms | Allocations: 2351)
+  Rendered layouts/_header.html.erb (Duration: 2.9ms | Allocations: 528)
+  Rendered layout layouts/application.html.erb (Duration: 32.8ms | Allocations: 5485)
+Completed 200 OK in 146ms (Views: 36.4ms | ActiveRecord: 31.3ms | Allocations: 22981)
+
+
+Started POST "/employees/1/articles" for 172.23.0.1 at 2022-10-30 20:11:20 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ArticlesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"登録する", "article"=>{"title"=>"cvxcvxdcdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcs", "content"=>""}, "employee_id"=>"1"}
+  [1m[36mEmployee Load (2.9ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered layouts/_error_messages.html.erb (Duration: 2.7ms | Allocations: 364)
+  Rendered articles/new.html.erb within layouts/application (Duration: 8.0ms | Allocations: 1411)
+  Rendered layouts/_header.html.erb (Duration: 3.5ms | Allocations: 505)
+  Rendered layout layouts/application.html.erb (Duration: 32.8ms | Allocations: 4323)
+Completed 200 OK in 53ms (Views: 36.6ms | ActiveRecord: 2.9ms | Allocations: 6355)
+
+
+Started POST "/employees/1/articles" for 172.23.0.1 at 2022-10-30 20:11:42 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ArticlesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"登録する", "article"=>{"title"=>"cvxcvxdcdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcs", "content"=>""}, "employee_id"=>"1"}
+  [1m[36mEmployee Load (3.6ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered layouts/_error_messages.html.erb (Duration: 1.9ms | Allocations: 364)
+  Rendered articles/new.html.erb within layouts/application (Duration: 9.9ms | Allocations: 1411)
+  Rendered layouts/_header.html.erb (Duration: 5.4ms | Allocations: 505)
+  Rendered layout layouts/application.html.erb (Duration: 46.6ms | Allocations: 4321)
+Completed 200 OK in 86ms (Views: 54.6ms | ActiveRecord: 3.6ms | Allocations: 6105)
+
+
+Started POST "/employees/1/articles" for 172.23.0.1 at 2022-10-30 20:11:50 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ArticlesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"登録する", "article"=>{"title"=>"cvxcvxdcdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcs", "content"=>""}, "employee_id"=>"1"}
+  [1m[36mEmployee Load (1.9ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered layouts/_error_messages.html.erb (Duration: 1.0ms | Allocations: 364)
+  Rendered articles/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1411)
+  Rendered layouts/_header.html.erb (Duration: 3.3ms | Allocations: 505)
+  Rendered layout layouts/application.html.erb (Duration: 28.1ms | Allocations: 4321)
+Completed 200 OK in 45ms (Views: 32.8ms | ActiveRecord: 1.9ms | Allocations: 6105)
+
+
+Started GET "/employees/1/articles/new" for 172.23.0.1 at 2022-10-30 20:11:53 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ArticlesController#new as HTML
+  Parameters: {"employee_id"=>"1"}
+  [1m[36mEmployee Load (1.9ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered layouts/_error_messages.html.erb (Duration: 0.4ms | Allocations: 39)
+  Rendered articles/new.html.erb within layouts/application (Duration: 9.0ms | Allocations: 877)
+  Rendered layouts/_header.html.erb (Duration: 3.6ms | Allocations: 505)
+  Rendered layout layouts/application.html.erb (Duration: 35.2ms | Allocations: 3796)
+Completed 200 OK in 51ms (Views: 40.3ms | ActiveRecord: 1.9ms | Allocations: 4825)
+
+
+Started GET "/employees/1/articles/new" for 172.23.0.1 at 2022-10-30 20:14:20 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ArticlesController#new as HTML
+  Parameters: {"employee_id"=>"1"}
+  [1m[36mEmployee Load (2.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered layouts/_error_messages.html.erb (Duration: 1.5ms | Allocations: 222)
+  Rendered articles/new.html.erb within layouts/application (Duration: 10.6ms | Allocations: 1598)
+  Rendered layouts/_header.html.erb (Duration: 5.8ms | Allocations: 711)
+  Rendered layout layouts/application.html.erb (Duration: 39.1ms | Allocations: 5350)
+Completed 200 OK in 55ms (Views: 44.0ms | ActiveRecord: 2.2ms | Allocations: 7297)
+
+
+Started POST "/employees/1/articles" for 172.23.0.1 at 2022-10-30 20:14:40 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ArticlesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"登録する", "article"=>{"title"=>"", "content"=>"dcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdc"}, "employee_id"=>"1"}
+  [1m[36mEmployee Load (2.7ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered layouts/_error_messages.html.erb (Duration: 2.3ms | Allocations: 330)
+  Rendered articles/new.html.erb within layouts/application (Duration: 8.3ms | Allocations: 1509)
+  Rendered layouts/_header.html.erb (Duration: 2.9ms | Allocations: 505)
+  Rendered layout layouts/application.html.erb (Duration: 30.5ms | Allocations: 4419)
+Completed 200 OK in 46ms (Views: 33.5ms | ActiveRecord: 2.7ms | Allocations: 6415)
+
+
+Started POST "/employees/1/articles" for 172.23.0.1 at 2022-10-30 20:15:02 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ArticlesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"登録する", "article"=>{"title"=>"", "content"=>"dcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdcsdc"}, "employee_id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  [1m[36mEmployee Load (1.5ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered layouts/_error_messages.html.erb (Duration: 4.5ms | Allocations: 758)
+  Rendered articles/new.html.erb within layouts/application (Duration: 15.5ms | Allocations: 2372)
+  Rendered layouts/_header.html.erb (Duration: 4.0ms | Allocations: 528)
+  Rendered layout layouts/application.html.erb (Duration: 41.8ms | Allocations: 5506)
+Completed 200 OK in 144ms (Views: 47.4ms | ActiveRecord: 20.3ms | Allocations: 23096)
+
+
+Started GET "/employees" for 172.23.0.1 at 2022-10-30 21:02:24 +0000
+Cannot render console from 172.23.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EmployeesController#index as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  [1m[36mEmployee Load (1.5ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" WHERE "employees"."deleted_at" IS NULL[0m
+  ↳ app/views/employees/index.html.erb:2
+  [1m[36mEmployee Load (2.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."deleted_at" IS NULL ORDER BY number asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/employees/index.html.erb:23
+  [1m[36mProfile Load (3.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."employee_id" = ? AND "profiles"."deleted_at" IS NULL[0m  [["employee_id", 1]]
+  ↳ app/views/employees/index.html.erb:25
+  [1m[36mDepartment Load (1.3ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/employees/index.html.erb:35
+  [1m[36mProfile Load (1.0ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."employee_id" = ? AND "profiles"."deleted_at" IS NULL[0m  [["employee_id", 2]]
+  ↳ app/views/employees/index.html.erb:25
+  [1m[36mCACHE Department Load (0.0ms)[0m  [1m[34mSELECT "departments".* FROM "departments" WHERE "departments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/employees/index.html.erb:35
+  Rendered employees/index.html.erb within layouts/application (Duration: 77.0ms | Allocations: 13641)
+  Rendered layouts/_header.html.erb (Duration: 3.0ms | Allocations: 515)
+  Rendered layout layouts/application.html.erb (Duration: 109.7ms | Allocations: 16799)
+Completed 200 OK in 165ms (Views: 96.0ms | ActiveRecord: 23.2ms | Allocations: 28477)
+
+
