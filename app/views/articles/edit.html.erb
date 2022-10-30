@@ -2,7 +2,7 @@
 
 <div style="text-align:center;">
   <%= form_with model: @article, url: employee_article_path(current_user.id,@article), method: :patch, local: true do |form| %>
-    
+    <%= render 'layouts/error_messages', model: form.object %>
     <br><div class="actions">
       <%= form.submit %>
     </div>

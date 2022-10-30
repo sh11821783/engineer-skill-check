@@ -12,6 +12,9 @@
     <%= javascript_pack_tag 'application' %>
   </head>
   <body>
+    <% flash.each do |message_type, message| %>
+      <%= message %>
+    <% end %>
     <% if logged_in? %>
       <%= render 'layouts/header' %>
     <% end %>

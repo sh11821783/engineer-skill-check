@@ -22,8 +22,9 @@ class ArticlesController < ApplicationController
   # お知らせ新規投稿（作成）
   def create
     @article = current_user.articles.new(article_params)
-    if @article.save!
-      redirect_to employee_articles_path, flash: {success: "お知らせ投稿完了致しました"}
+    if @article.save
+      flash[:success] = "お知らせ投稿完了致しました"
+      redirect_to employee_articles_path
     else
       flash.now[:danger] = '投稿出来ませんでした。'  # 4/25訂正
       render :new
@@ -33,17 +34,19 @@ class ArticlesController < ApplicationController
   # お知らせ新規投稿（更新）
   def update
     if @article.update(article_params)
-      redirect_to employee_articles_path, flash: {success: "お知らせ内容を更新致しました"}
+      flash[:success] = "お知らせ内容を更新致しました"
+      redirect_to employee_articles_path
     else
       flash.now[:danger] = '投稿出来ませんでした。'  # 4/25訂正
-      render :index
+      render :edit
     end
   end
 
   # お知らせ新規投稿（削除）
   def destroy
     if @article.destroy!
-      redirect_to employee_articles_path, flash: {warning: "記事を削除しました。"}
+      flash[:warning] = "記事を削除しました。"
+      redirect_to employee_articles_path
     else
       redirect_to :index
     end
