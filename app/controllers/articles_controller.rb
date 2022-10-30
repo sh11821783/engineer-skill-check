@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
 
   # お知らせ一覧ページ
   def index
-    @articles = Article.all.includes(:employee)
+    @articles = Article.all.order(:created_at)
   end
 
   # お知らせ詳細ページ
@@ -60,6 +60,6 @@ class ArticlesController < ApplicationController
 
     # お知らせ記事投稿内容
     def article_params
-      params.require(:article).permit(:title, :content, :author)
+      params.require(:article).permit(:title, :content, :author, :created_at)
     end
 end
