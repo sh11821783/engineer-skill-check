@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :profile, do
+  factory :profile do
     # employeeモデルアソシエーション
     association :profile,
     # titleカラムが50文字のランダム文字列

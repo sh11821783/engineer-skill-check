@@ -2,6 +2,8 @@
     <%= paginate @employees %>
 </div>
 
+<%= link_to "csvで出力する", root_path(format: :csv) %>
+
 <div class="employee_index">
   <% if flash.notice.present? %>
     <p><%= flash.notice %></p>
