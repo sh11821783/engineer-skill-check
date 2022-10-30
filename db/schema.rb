@@ -16,8 +16,10 @@ ActiveRecord::Schema.define(version: 2022_10_29_075851) do
     t.string "title"
     t.text "content"
     t.integer "author"
+    t.integer "employee_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["employee_id"], name: "index_articles_on_employee_id"
   end
 
   create_table "departments", force: :cascade do |t|
@@ -61,6 +63,7 @@ ActiveRecord::Schema.define(version: 2022_10_29_075851) do
     t.index ["employee_id"], name: "index_profiles_on_employee_id"
   end
 
+  add_foreign_key "articles", "employees"
   add_foreign_key "employees", "departments"
   add_foreign_key "employees", "offices"
   add_foreign_key "profiles", "employees"

@@ -4,18 +4,15 @@
   <thead>
     <tr>
       <th>title</th>
-      <th>Content</th>
-      <th>Author</th>
+      <td><%= @article.title %></td>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><%= @article.title %></td>
       <td><%= @article.content %></td>
-      <td><%= @article.author %></td>
     </tr>
   </tbody>
 </table>
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+<%= link_to 'Edit', edit_employee_article_path(@article) %> |
+<%= link_to 'Back', new_employee_article_path %>

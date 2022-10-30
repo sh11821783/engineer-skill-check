@@ -1,68 +1,61 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: %i[ show edit update destroy ]
 
-  # GET /articles or /articles.json
+  # お知らせ一覧ページ
   def index
-    @articles = Article.all
+    @articles = Article.all.includes(:employee)
   end
 
-  # GET /articles/1 or /articles/1.json
+  # お知らせ詳細ページ
   def show
   end
 
-  # GET /articles/new
+  # お知らせ新規投稿ページ
   def new
     @article = Article.new
   end
 
-  # GET /articles/1/edit
+  # お知らせ編集ページ
   def edit
   end
 
-  # POST /articles or /articles.json
+  # お知らせ新規投稿（作成）
   def create
-    @article = Article.new(article_params)
-
-    respond_to do |format|
-      if @article.save
-        format.html { redirect_to @article, notice: "Article was successfully created." }
-        format.json { render :show, status: :created, location: @article }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @article.errors, status: :unprocessable_entity }
-      end
+    @article = current_user.articles.new(article_params)
+    if @article.save!
+      redirect_to employee_articles_path, flash: {success: "お知らせ投稿完了致しました"}
+    else
+      flash.now[:danger] = '投稿出来ませんでした。'  # 4/25訂正
+      render :new
     end
   end
 
-  # PATCH/PUT /articles/1 or /articles/1.json
+  # お知らせ新規投稿（更新）
   def update
-    respond_to do |format|
-      if @article.update(article_params)
-        format.html { redirect_to @article, notice: "Article was successfully updated." }
-        format.json { render :show, status: :ok, location: @article }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @article.errors, status: :unprocessable_entity }
-      end
+    if @article.update(article_params)
+      redirect_to employee_articles_path, flash: {success: "お知らせ内容を更新致しました"}
+    else
+      flash.now[:danger] = '投稿出来ませんでした。'  # 4/25訂正
+      render :index
     end
   end
 
-  # DELETE /articles/1 or /articles/1.json
+  # お知らせ新規投稿（削除）
   def destroy
-    @article.destroy
-    respond_to do |format|
-      format.html { redirect_to articles_url, notice: "Article was successfully destroyed." }
-      format.json { head :no_content }
+    if @article.destroy!
+      redirect_to employee_articles_path, flash: {warning: "記事を削除しました。"}
+    else
+      redirect_to :index
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+    # ログインユーザーのidをセット
     def set_article
-      @article = Article.find(params[:id])
+      @article = current_user.articles.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
+    # お知らせ記事投稿内容
     def article_params
       params.require(:article).permit(:title, :content, :author)
     end

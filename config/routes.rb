@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :articles
   resources :dashboard, only: :index
   root 'employees#index'
 
@@ -9,5 +8,6 @@ Rails.application.routes.draw do
 
   resources :employees do
     resources :profiles
+    resources :articles
   end
 end
