@@ -1,13 +1,14 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: %i[ show edit update destroy ]
+  before_action :set_article, only: %i[ edit update destroy ]
 
   # お知らせ一覧ページ
   def index
-    @articles = Article.all.order(:created_at)
+    @articles = Article.page(params[:page]).per(5)
   end
 
   # お知らせ詳細ページ
   def show
+    @article = Article.find_by(id: params[:id])
   end
 
   # お知らせ新規投稿ページ

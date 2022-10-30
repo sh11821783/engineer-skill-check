@@ -1,5 +1,8 @@
 <h1>お知らせ一覧</h1>
 
+<div class="text-center">
+    <%= paginate @articles %>
+</div>
 <table class="table">
   <thead>
     <tr>
@@ -16,7 +19,7 @@
     <% @articles.each do |article| %>
       <tr>
         <td><%= article.created_at.strftime('%Y/%m/%d') %></td>
-        <td><%= article.title %></td>
+        <td><%= link_to article.title, "employees/#{article.id}/articles/#{article.id}" %></td>
         <td></td>
         <td></td>
         <% if current_user.new_posting_auth %>
@@ -31,7 +34,9 @@
     <% end %>
   </tbody>
 </table>
-
+<div class="text-center">
+    <%= paginate @articles %>
+</div>
 <br>
 
 <%= link_to 'New Article', new_employee_article_path %>
