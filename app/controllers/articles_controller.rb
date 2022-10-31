@@ -3,7 +3,8 @@ class ArticlesController < ApplicationController
 
   # お知らせ一覧ページ
   def index
-    @articles = Article.page(params[:page]).per(5)
+    @articles = Article.includes(:employee)
+    @employees = Article.includes(:employee).page(params[:page]).per(5)
   end
 
   # お知らせ詳細ページ
